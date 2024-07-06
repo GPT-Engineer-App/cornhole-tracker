@@ -21,7 +21,6 @@ const Layout = () => {
         <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
           <MobileSidebar />
           <div className="w-full flex-1">{/* Add nav bar content here! */}</div>
-          <UserDropdown />
         </header>
         <main className="flex-grow p-4 overflow-auto">
           <Outlet />
@@ -79,25 +78,6 @@ const MobileSidebar = () => (
       </nav>
     </SheetContent>
   </Sheet>
-);
-
-const UserDropdown = () => (
-  <DropdownMenu>
-    <DropdownMenuTrigger asChild>
-      <Button variant="secondary" size="icon" className="rounded-full">
-        <CircleUser className="h-5 w-5" />
-        <span className="sr-only">Toggle user menu</span>
-      </Button>
-    </DropdownMenuTrigger>
-    <DropdownMenuContent align="end">
-      <DropdownMenuLabel>My Account</DropdownMenuLabel>
-      <DropdownMenuSeparator />
-      <DropdownMenuItem>Settings</DropdownMenuItem>
-      <DropdownMenuItem>Support</DropdownMenuItem>
-      <DropdownMenuSeparator />
-      <DropdownMenuItem>Logout</DropdownMenuItem>
-    </DropdownMenuContent>
-  </DropdownMenu>
 );
 
 const SidebarNavLink = ({ to, children }) => (
