@@ -19,9 +19,15 @@ const Session = () => {
 
   const handleScoreChange = (team, delta) => {
     if (team === "A") {
-      setTeamA((prev) => ({ ...prev, score: prev.score + delta }));
+      setTeamA((prev) => {
+        const newScore = prev.score + delta;
+        return { ...prev, score: newScore > 15 ? 11 : newScore };
+      });
     } else {
-      setTeamB((prev) => ({ ...prev, score: prev.score + delta }));
+      setTeamB((prev) => {
+        const newScore = prev.score + delta;
+        return { ...prev, score: newScore > 15 ? 11 : newScore };
+      });
     }
   };
 
